@@ -1,0 +1,108 @@
+\documentclass[12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{eso-pic}
+\usepackage{xcolor}
+\usepackage{fancyhdr}
+\usepackage{times}
+
+% Configuración de página
+\geometry{
+    paper=a4paper,
+    margin=2.5cm,
+    top=3.8cm,
+    bottom=2.5cm,
+    left=2.8cm,
+    right=2.8cm
+}
+
+% Agregar la plantilla PDF como fondo
+\AddToShipoutPictureBG{%
+    \put(0,0){%
+        \includegraphics[width=\paperwidth,height=\paperheight]{Hoja_Membretada.pdf}%
+    }%
+}
+
+% Configurar fecha en español
+\addto\captionsspanish{%
+    \def\tablename{Tabla}%
+    \def\figurename{Figura}%
+}
+
+% Eliminar numeración de página
+\pagestyle{empty}
+
+% Configurar párrafos
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{8pt}
+
+\begin{document}
+
+% Fecha y folio
+\noindent
+{\small \textbf{Cuatro Veces Heroica Puebla de Zaragoza, a \today}} \\
+{\small \textbf{Memorándum: USEP/SAC/DLMC/}\\
+{\small \textbf{Asunto:} \VARASUNTO}
+
+\vspace{0.8cm}
+
+% Destinatario
+\noindent
+\textbf{\VARDESTINATARIO} \\
+\textbf{\VARDESTINATARIOPUESTO} \\
+\textbf{\VARDEPARTAMENTO}
+
+\vspace{0.5cm}
+
+\noindent
+\textbf{PRESENTE}
+
+\vspace{0.5cm}
+
+% Cuerpo del documento
+\noindent
+Con el gusto de saludarle y con fundamento en el título segundo, capítulo V, artículo 18, fracción II, III, IV, XIII, así como los artículos 33, 46 y 80 del Reglamento Interior de la Universidad de la Salud, me dirijo a usted para solicitar el préstamo de la unidad automovilística institucional \VARTEXTOFECHAS en un horario de \VARHORAINICIO a \VARHORAFIN horas; \VARDESTINOS
+
+\vspace{0.3cm}
+
+\noindent
+\VARTEXTOPERSONAL
+
+\vspace{0.5cm}
+
+\noindent
+Sin otro particular quedo de usted, agradeciendo su atención y apoyo.
+
+\vspace{1cm}
+
+\noindent
+\textbf{ATENTAMENTE}
+
+\vspace{1.5cm}
+
+% Firma
+\noindent
+\rule{8cm}{0.4pt} \\
+\textbf{\VARSOLICITANTENOMBRE} \\
+\VARSOLICITANTEPUESTO
+
+\vspace{0.8cm}
+
+% CCP (Con copia para)
+\noindent
+
+\vspace{0.5cm}
+
+% Elaboró y revisó
+\noindent
+{\small Elaboró: LEMJ} \\
+{\small Revisó: AGR}
+
+\vspace{0.5cm}
+
+% Pie de página
+\noindent
+
+\end{document}
