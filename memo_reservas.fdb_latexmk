@@ -1,7 +1,7 @@
 # Fdb version 4
-["pdflatex"] 1774932764.17942 "/home/kikin/Proyectos/Reservas/Reservas/memo_reservas.tex" "memo_reservas.pdf" "memo_reservas" 1774932764.59011 2
+["pdflatex"] 1774933204.31068 "/home/kikin/Proyectos/Reservas/Reservas/memo_reservas.tex" "memo_reservas.pdf" "memo_reservas" 1774933204.61064 2
   "/etc/texmf/web2c/texmf.cnf" 1774928538.52967 475 c0e671620eb5563b2130f56340a5fde8 ""
-  "/home/kikin/Proyectos/Reservas/Reservas/memo_reservas.tex" 1774932763.88599 2137 d2ec4052be893ca00b3cfd6c120ebcbe ""
+  "/home/kikin/Proyectos/Reservas/Reservas/memo_reservas.tex" 1774933204.08206 2137 d2ec4052be893ca00b3cfd6c120ebcbe ""
   "/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc" 1165713224 4850 80dc9bab7f31fb78a000ccfed0e27cab ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/adobe/times/ptmb7t.tfm" 1136768653 2172 fd0c924230362ff848a33632ed45dc23 ""
@@ -57,8 +57,8 @@
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1774928575.57786 5472669 54eaf61a88b6b7896ebd0dac973cb29c ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1774928651 8213573 b0ec11c6357c84eb7e8a0b432f77f555 ""
   "Hoja_Membretada.pdf" 1774925061.74546 371641 2c5db3dd953d1de5dda11adcbc8141ce ""
-  "memo_reservas.aux" 1774932764.53908 194 72658fb03bfd53fc103956ba2036b889 "pdflatex"
-  "memo_reservas.tex" 1774932763.88599 2137 d2ec4052be893ca00b3cfd6c120ebcbe ""
+  "memo_reservas.aux" 1774933204.56892 194 72658fb03bfd53fc103956ba2036b889 "pdflatex"
+  "memo_reservas.tex" 1774933204.08206 2137 d2ec4052be893ca00b3cfd6c120ebcbe ""
   (generated)
   "memo_reservas.aux"
   "memo_reservas.log"

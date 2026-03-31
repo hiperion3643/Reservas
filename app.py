@@ -51,7 +51,14 @@ def generar_latex_con_datos(datos):
         template_content = f.read()
     
     # Crear Environment de Jinja2 con delimitadores que no conflicten con LaTeX
-    env = Environment(variable_start_string='[[', variable_end_string=']]')
+    env = Environment(
+        variable_start_string='[[',
+        variable_end_string=']]',
+        block_start_string='<BLOCK>',
+        block_end_string='</BLOCK>',
+        comment_start_string='<COMMENT>',
+        comment_end_string='</COMMENT>'
+    )
     template = env.from_string(template_content)
     
     # Renderizar con los datos
