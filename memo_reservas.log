@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2026.3.30)  30 MAR 2026 23:00
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2026.3.30)  30 MAR 2026 23:10
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -292,162 +292,907 @@ l.73
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
 
-/home/kikin/Proyectos/Reservas/Reservas/memo_reservas.tex:89: Missing $ inserted.
+/home/kikin/Proyectos/Reservas/Reservas/memo_reservas.tex:90: Missing $ inserted.
 <inserted text> 
                 $
-l.89 \textbf{[[ solicitante_nombre ]]}
-                                       \\
+l.90 \textbf{[[ solicitante_nombre ]]}
+                                       & \textbf{Lic. Altagracia García Ros...
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
 
-/home/kikin/Proyectos/Reservas/Reservas/memo_reservas.tex:89: Extra }, or forgotten $.
+/home/kikin/Proyectos/Reservas/Reservas/memo_reservas.tex:90: Extra }, or forgotten $.
 <recently read> \egroup 
                         
-l.89 \textbf{[[ solicitante_nombre ]]}
-                                       \\
+l.90 \textbf{[[ solicitante_nombre ]]}
+                                       & \textbf{Lic. Altagracia García Ros...
 I've deleted a group-closing symbol because it seems to be
 spurious, as in `$x}$'. But perhaps the } is legitimate and
 you forgot something else, as in `\hbox{$x}'. In such cases
 the way to recover is to insert both the forgotten and the
 deleted material, e.g., by typing `I$}'.
 
-/home/kikin/Proyectos/Reservas/Reservas/memo_reservas.tex:90: Missing number, treated as zero.
-<to be read again> 
-                   [
-l.90 [[ solicitante_puesto ]
-                            ]
-A number should have been here; I inserted `0'.
-(If you can't figure out why I needed to see a number,
-look up `weird error' in the index to The TeXbook.)
-
-/home/kikin/Proyectos/Reservas/Reservas/memo_reservas.tex:90: Illegal unit of measure (pt inserted).
-<to be read again> 
-                   [
-l.90 [[ solicitante_puesto ]
-                            ]
-Dimensions can be in units of em, ex, in, pt, pc,
-cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
-I'll assume that you meant to say pt, for printer's points.
-To recover gracefully from this error, it's best to
-delete the erroneous units; e.g., type `2' to delete
-two letters. (See Chapter 27 of The TeXbook.)
-
-/home/kikin/Proyectos/Reservas/Reservas/memo_reservas.tex:90: Missing $ inserted.
-<inserted text> 
-                $
-l.90 [[ solicitante_puesto ]
-                            ]
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-/home/kikin/Proyectos/Reservas/Reservas/memo_reservas.tex:90: Missing $ inserted.
-<inserted text> 
-                $
-l.90 [[ solicitante_puesto ]
-                            ]
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-/home/kikin/Proyectos/Reservas/Reservas/memo_reservas.tex:91: Missing $ inserted.
-<inserted text> 
-                $
-l.91 
-     
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-/home/kikin/Proyectos/Reservas/Reservas/memo_reservas.tex:109: Improper \prevdepth.
-\newpage ...everypar {}\fi \par \ifdim \prevdepth 
-                                                  >\z@ \vskip -\ifdim \prevd...
-l.109 \end{document}
-                    
-You can refer to \spacefactor only in horizontal mode;
-you can refer to \prevdepth only in vertical mode; and
-neither of these is meaningful inside \write. So
-I'm forgetting what you said and using zero instead.
-
-/home/kikin/Proyectos/Reservas/Reservas/memo_reservas.tex:109: Missing } inserted.
+/home/kikin/Proyectos/Reservas/Reservas/memo_reservas.tex:90: Missing } inserted.
 <inserted text> 
                 }
-l.109 \end{document}
-                    
-I've inserted something that you may have forgotten.
-(See the <inserted text> above.)
-With luck, this will get me unwedged. But if you
-really didn't forget anything, try typing `2' now; then
-my insertion and my current dilemma will both disappear.
+l.90 \textbf{[[ solicitante_nombre ]]} &
+                                         \textbf{Lic. Altagracia García Ros...
+I've put in what seems to be necessary to fix
+the current column of the current alignment.
+Try to go on, since this might almost work.
 
-/home/kikin/Proyectos/Reservas/Reservas/memo_reservas.tex:109: Missing } inserted.
+/home/kikin/Proyectos/Reservas/Reservas/memo_reservas.tex:90: Extra }, or forgotten $.
+<inserted text> }
+                 
+l.90 \textbf{[[ solicitante_nombre ]]} &
+                                         \textbf{Lic. Altagracia García Ros...
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+/home/kikin/Proyectos/Reservas/Reservas/memo_reservas.tex:90: Missing } inserted.
 <inserted text> 
                 }
-l.109 \end{document}
-                    
-I've inserted something that you may have forgotten.
-(See the <inserted text> above.)
-With luck, this will get me unwedged. But if you
-really didn't forget anything, try typing `2' now; then
-my insertion and my current dilemma will both disappear.
+l.90 \textbf{[[ solicitante_nombre ]]} &
+                                         \textbf{Lic. Altagracia García Ros...
+I've put in what seems to be necessary to fix
+the current column of the current alignment.
+Try to go on, since this might almost work.
 
-/home/kikin/Proyectos/Reservas/Reservas/memo_reservas.tex:109: Missing $ inserted.
-<inserted text> 
-                $
-l.109 \end{document}
-                    
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
+/home/kikin/Proyectos/Reservas/Reservas/memo_reservas.tex:90: Extra }, or forgotten $.
+<inserted text> }
+                 
+l.90 \textbf{[[ solicitante_nombre ]]} &
+                                         \textbf{Lic. Altagracia García Ros...
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
 
-/home/kikin/Proyectos/Reservas/Reservas/memo_reservas.tex:109: Missing } inserted.
+/home/kikin/Proyectos/Reservas/Reservas/memo_reservas.tex:90: Missing } inserted.
 <inserted text> 
                 }
-l.109 \end{document}
-                    
-I've inserted something that you may have forgotten.
-(See the <inserted text> above.)
-With luck, this will get me unwedged. But if you
-really didn't forget anything, try typing `2' now; then
-my insertion and my current dilemma will both disappear.
+l.90 \textbf{[[ solicitante_nombre ]]} &
+                                         \textbf{Lic. Altagracia García Ros...
+I've put in what seems to be necessary to fix
+the current column of the current alignment.
+Try to go on, since this might almost work.
 
+/home/kikin/Proyectos/Reservas/Reservas/memo_reservas.tex:90: Extra }, or forgotten $.
+<inserted text> }
+                 
+l.90 \textbf{[[ solicitante_nombre ]]} &
+                                         \textbf{Lic. Altagracia García Ros...
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
 
-Overfull \hbox (2690.24062pt too wide) in paragraph at lines 53--109
-[]$ 
- []
+/home/kikin/Proyectos/Reservas/Reservas/memo_reservas.tex:90: Missing } inserted.
+<inserted text> 
+                }
+l.90 \textbf{[[ solicitante_nombre ]]} &
+                                         \textbf{Lic. Altagracia García Ros...
+I've put in what seems to be necessary to fix
+the current column of the current alignment.
+Try to go on, since this might almost work.
 
+/home/kikin/Proyectos/Reservas/Reservas/memo_reservas.tex:90: Extra }, or forgotten $.
+<inserted text> }
+                 
+l.90 \textbf{[[ solicitante_nombre ]]} &
+                                         \textbf{Lic. Altagracia García Ros...
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
 
+/home/kikin/Proyectos/Reservas/Reservas/memo_reservas.tex:90: Missing } inserted.
+<inserted text> 
+                }
+l.90 \textbf{[[ solicitante_nombre ]]} &
+                                         \textbf{Lic. Altagracia García Ros...
+I've put in what seems to be necessary to fix
+the current column of the current alignment.
+Try to go on, since this might almost work.
 
-pdfTeX warning: pdflatex (file ./Hoja_Membretada.pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
-<Hoja_Membretada.pdf, id=1, 614.295pt x 794.97pt>
-File: Hoja_Membretada.pdf Graphic file (type pdf)
-<use Hoja_Membretada.pdf>
-Package pdftex.def Info: Hoja_Membretada.pdf  used on input line 109.
-(pdftex.def)             Requested size: 597.54326pt x 845.07813pt.
-[1
+/home/kikin/Proyectos/Reservas/Reservas/memo_reservas.tex:90: Extra }, or forgotten $.
+<inserted text> }
+                 
+l.90 \textbf{[[ solicitante_nombre ]]} &
+                                         \textbf{Lic. Altagracia García Ros...
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}{/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc} <./Hoja_Membretada.pdf>] (./memo_reservas.aux
-LaTeX Info: Redefining \. on input line 8.
-LaTeX Info: Redefining \% on input line 8.
-)
- ***********
-LaTeX2e <2023-11-01> patch level 1
-L3 programming layer <2024-01-22>
- ***********
- )
-(\end occurred inside a group at level 1)
+/home/kikin/Proyectos/Reservas/Reservas/memo_reservas.tex:90: Missing } inserted.
+<inserted text> 
+                }
+l.90 \textbf{[[ solicitante_nombre ]]} &
+                                         \textbf{Lic. Altagracia García Ros...
+I've put in what seems to be necessary to fix
+the current column of the current alignment.
+Try to go on, since this might almost work.
 
-### simple group (level 1) entered at line 54 ({)
-### bottom level 
+/home/kikin/Proyectos/Reservas/Reservas/memo_reservas.tex:90: Extra }, or forgotten $.
+<inserted text> }
+                 
+l.90 \textbf{[[ solicitante_nombre ]]} &
+                                         \textbf{Lic. Altagracia García Ros...
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+/home/kikin/Proyectos/Reservas/Reservas/memo_reservas.tex:90: Missing } inserted.
+<inserted text> 
+                }
+l.90 \textbf{[[ solicitante_nombre ]]} &
+                                         \textbf{Lic. Altagracia García Ros...
+I've put in what seems to be necessary to fix
+the current column of the current alignment.
+Try to go on, since this might almost work.
+
+/home/kikin/Proyectos/Reservas/Reservas/memo_reservas.tex:90: Extra }, or forgotten $.
+<inserted text> }
+                 
+l.90 \textbf{[[ solicitante_nombre ]]} &
+                                         \textbf{Lic. Altagracia García Ros...
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+/home/kikin/Proyectos/Reservas/Reservas/memo_reservas.tex:90: Missing } inserted.
+<inserted text> 
+                }
+l.90 \textbf{[[ solicitante_nombre ]]} &
+                                         \textbf{Lic. Altagracia García Ros...
+I've put in what seems to be necessary to fix
+the current column of the current alignment.
+Try to go on, since this might almost work.
+
+/home/kikin/Proyectos/Reservas/Reservas/memo_reservas.tex:90: Extra }, or forgotten $.
+<inserted text> }
+                 
+l.90 \textbf{[[ solicitante_nombre ]]} &
+                                         \textbf{Lic. Altagracia García Ros...
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+/home/kikin/Proyectos/Reservas/Reservas/memo_reservas.tex:90: Missing } inserted.
+<inserted text> 
+                }
+l.90 \textbf{[[ solicitante_nombre ]]} &
+                                         \textbf{Lic. Altagracia García Ros...
+I've put in what seems to be necessary to fix
+the current column of the current alignment.
+Try to go on, since this might almost work.
+
+/home/kikin/Proyectos/Reservas/Reservas/memo_reservas.tex:90: Extra }, or forgotten $.
+<inserted text> }
+                 
+l.90 \textbf{[[ solicitante_nombre ]]} &
+                                         \textbf{Lic. Altagracia García Ros...
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+/home/kikin/Proyectos/Reservas/Reservas/memo_reservas.tex:90: Missing } inserted.
+<inserted text> 
+                }
+l.90 \textbf{[[ solicitante_nombre ]]} &
+                                         \textbf{Lic. Altagracia García Ros...
+I've put in what seems to be necessary to fix
+the current column of the current alignment.
+Try to go on, since this might almost work.
+
+/home/kikin/Proyectos/Reservas/Reservas/memo_reservas.tex:90: Extra }, or forgotten $.
+<inserted text> }
+                 
+l.90 \textbf{[[ solicitante_nombre ]]} &
+                                         \textbf{Lic. Altagracia García Ros...
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+/home/kikin/Proyectos/Reservas/Reservas/memo_reservas.tex:90: Missing } inserted.
+<inserted text> 
+                }
+l.90 \textbf{[[ solicitante_nombre ]]} &
+                                         \textbf{Lic. Altagracia García Ros...
+I've put in what seems to be necessary to fix
+the current column of the current alignment.
+Try to go on, since this might almost work.
+
+/home/kikin/Proyectos/Reservas/Reservas/memo_reservas.tex:90: Extra }, or forgotten $.
+<inserted text> }
+                 
+l.90 \textbf{[[ solicitante_nombre ]]} &
+                                         \textbf{Lic. Altagracia García Ros...
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+/home/kikin/Proyectos/Reservas/Reservas/memo_reservas.tex:90: Missing } inserted.
+<inserted text> 
+                }
+l.90 \textbf{[[ solicitante_nombre ]]} &
+                                         \textbf{Lic. Altagracia García Ros...
+I've put in what seems to be necessary to fix
+the current column of the current alignment.
+Try to go on, since this might almost work.
+
+/home/kikin/Proyectos/Reservas/Reservas/memo_reservas.tex:90: Extra }, or forgotten $.
+<inserted text> }
+                 
+l.90 \textbf{[[ solicitante_nombre ]]} &
+                                         \textbf{Lic. Altagracia García Ros...
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+/home/kikin/Proyectos/Reservas/Reservas/memo_reservas.tex:90: Missing } inserted.
+<inserted text> 
+                }
+l.90 \textbf{[[ solicitante_nombre ]]} &
+                                         \textbf{Lic. Altagracia García Ros...
+I've put in what seems to be necessary to fix
+the current column of the current alignment.
+Try to go on, since this might almost work.
+
+/home/kikin/Proyectos/Reservas/Reservas/memo_reservas.tex:90: Extra }, or forgotten $.
+<inserted text> }
+                 
+l.90 \textbf{[[ solicitante_nombre ]]} &
+                                         \textbf{Lic. Altagracia García Ros...
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+/home/kikin/Proyectos/Reservas/Reservas/memo_reservas.tex:90: Missing } inserted.
+<inserted text> 
+                }
+l.90 \textbf{[[ solicitante_nombre ]]} &
+                                         \textbf{Lic. Altagracia García Ros...
+I've put in what seems to be necessary to fix
+the current column of the current alignment.
+Try to go on, since this might almost work.
+
+/home/kikin/Proyectos/Reservas/Reservas/memo_reservas.tex:90: Extra }, or forgotten $.
+<inserted text> }
+                 
+l.90 \textbf{[[ solicitante_nombre ]]} &
+                                         \textbf{Lic. Altagracia García Ros...
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+/home/kikin/Proyectos/Reservas/Reservas/memo_reservas.tex:90: Missing } inserted.
+<inserted text> 
+                }
+l.90 \textbf{[[ solicitante_nombre ]]} &
+                                         \textbf{Lic. Altagracia García Ros...
+I've put in what seems to be necessary to fix
+the current column of the current alignment.
+Try to go on, since this might almost work.
+
+/home/kikin/Proyectos/Reservas/Reservas/memo_reservas.tex:90: Extra }, or forgotten $.
+<inserted text> }
+                 
+l.90 \textbf{[[ solicitante_nombre ]]} &
+                                         \textbf{Lic. Altagracia García Ros...
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+/home/kikin/Proyectos/Reservas/Reservas/memo_reservas.tex:90: Missing } inserted.
+<inserted text> 
+                }
+l.90 \textbf{[[ solicitante_nombre ]]} &
+                                         \textbf{Lic. Altagracia García Ros...
+I've put in what seems to be necessary to fix
+the current column of the current alignment.
+Try to go on, since this might almost work.
+
+/home/kikin/Proyectos/Reservas/Reservas/memo_reservas.tex:90: Extra }, or forgotten $.
+<inserted text> }
+                 
+l.90 \textbf{[[ solicitante_nombre ]]} &
+                                         \textbf{Lic. Altagracia García Ros...
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+/home/kikin/Proyectos/Reservas/Reservas/memo_reservas.tex:90: Missing } inserted.
+<inserted text> 
+                }
+l.90 \textbf{[[ solicitante_nombre ]]} &
+                                         \textbf{Lic. Altagracia García Ros...
+I've put in what seems to be necessary to fix
+the current column of the current alignment.
+Try to go on, since this might almost work.
+
+/home/kikin/Proyectos/Reservas/Reservas/memo_reservas.tex:90: Extra }, or forgotten $.
+<inserted text> }
+                 
+l.90 \textbf{[[ solicitante_nombre ]]} &
+                                         \textbf{Lic. Altagracia García Ros...
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+/home/kikin/Proyectos/Reservas/Reservas/memo_reservas.tex:90: Missing } inserted.
+<inserted text> 
+                }
+l.90 \textbf{[[ solicitante_nombre ]]} &
+                                         \textbf{Lic. Altagracia García Ros...
+I've put in what seems to be necessary to fix
+the current column of the current alignment.
+Try to go on, since this might almost work.
+
+/home/kikin/Proyectos/Reservas/Reservas/memo_reservas.tex:90: Extra }, or forgotten $.
+<inserted text> }
+                 
+l.90 \textbf{[[ solicitante_nombre ]]} &
+                                         \textbf{Lic. Altagracia García Ros...
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+/home/kikin/Proyectos/Reservas/Reservas/memo_reservas.tex:90: Missing } inserted.
+<inserted text> 
+                }
+l.90 \textbf{[[ solicitante_nombre ]]} &
+                                         \textbf{Lic. Altagracia García Ros...
+I've put in what seems to be necessary to fix
+the current column of the current alignment.
+Try to go on, since this might almost work.
+
+/home/kikin/Proyectos/Reservas/Reservas/memo_reservas.tex:90: Extra }, or forgotten $.
+<inserted text> }
+                 
+l.90 \textbf{[[ solicitante_nombre ]]} &
+                                         \textbf{Lic. Altagracia García Ros...
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+/home/kikin/Proyectos/Reservas/Reservas/memo_reservas.tex:90: Missing } inserted.
+<inserted text> 
+                }
+l.90 \textbf{[[ solicitante_nombre ]]} &
+                                         \textbf{Lic. Altagracia García Ros...
+I've put in what seems to be necessary to fix
+the current column of the current alignment.
+Try to go on, since this might almost work.
+
+/home/kikin/Proyectos/Reservas/Reservas/memo_reservas.tex:90: Extra }, or forgotten $.
+<inserted text> }
+                 
+l.90 \textbf{[[ solicitante_nombre ]]} &
+                                         \textbf{Lic. Altagracia García Ros...
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+/home/kikin/Proyectos/Reservas/Reservas/memo_reservas.tex:90: Missing } inserted.
+<inserted text> 
+                }
+l.90 \textbf{[[ solicitante_nombre ]]} &
+                                         \textbf{Lic. Altagracia García Ros...
+I've put in what seems to be necessary to fix
+the current column of the current alignment.
+Try to go on, since this might almost work.
+
+/home/kikin/Proyectos/Reservas/Reservas/memo_reservas.tex:90: Extra }, or forgotten $.
+<inserted text> }
+                 
+l.90 \textbf{[[ solicitante_nombre ]]} &
+                                         \textbf{Lic. Altagracia García Ros...
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+/home/kikin/Proyectos/Reservas/Reservas/memo_reservas.tex:90: Missing } inserted.
+<inserted text> 
+                }
+l.90 \textbf{[[ solicitante_nombre ]]} &
+                                         \textbf{Lic. Altagracia García Ros...
+I've put in what seems to be necessary to fix
+the current column of the current alignment.
+Try to go on, since this might almost work.
+
+/home/kikin/Proyectos/Reservas/Reservas/memo_reservas.tex:90: Extra }, or forgotten $.
+<inserted text> }
+                 
+l.90 \textbf{[[ solicitante_nombre ]]} &
+                                         \textbf{Lic. Altagracia García Ros...
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+/home/kikin/Proyectos/Reservas/Reservas/memo_reservas.tex:90: Missing } inserted.
+<inserted text> 
+                }
+l.90 \textbf{[[ solicitante_nombre ]]} &
+                                         \textbf{Lic. Altagracia García Ros...
+I've put in what seems to be necessary to fix
+the current column of the current alignment.
+Try to go on, since this might almost work.
+
+/home/kikin/Proyectos/Reservas/Reservas/memo_reservas.tex:90: Extra }, or forgotten $.
+<inserted text> }
+                 
+l.90 \textbf{[[ solicitante_nombre ]]} &
+                                         \textbf{Lic. Altagracia García Ros...
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+/home/kikin/Proyectos/Reservas/Reservas/memo_reservas.tex:90: Missing } inserted.
+<inserted text> 
+                }
+l.90 \textbf{[[ solicitante_nombre ]]} &
+                                         \textbf{Lic. Altagracia García Ros...
+I've put in what seems to be necessary to fix
+the current column of the current alignment.
+Try to go on, since this might almost work.
+
+/home/kikin/Proyectos/Reservas/Reservas/memo_reservas.tex:90: Extra }, or forgotten $.
+<inserted text> }
+                 
+l.90 \textbf{[[ solicitante_nombre ]]} &
+                                         \textbf{Lic. Altagracia García Ros...
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+/home/kikin/Proyectos/Reservas/Reservas/memo_reservas.tex:90: Missing } inserted.
+<inserted text> 
+                }
+l.90 \textbf{[[ solicitante_nombre ]]} &
+                                         \textbf{Lic. Altagracia García Ros...
+I've put in what seems to be necessary to fix
+the current column of the current alignment.
+Try to go on, since this might almost work.
+
+/home/kikin/Proyectos/Reservas/Reservas/memo_reservas.tex:90: Extra }, or forgotten $.
+<inserted text> }
+                 
+l.90 \textbf{[[ solicitante_nombre ]]} &
+                                         \textbf{Lic. Altagracia García Ros...
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+/home/kikin/Proyectos/Reservas/Reservas/memo_reservas.tex:90: Missing } inserted.
+<inserted text> 
+                }
+l.90 \textbf{[[ solicitante_nombre ]]} &
+                                         \textbf{Lic. Altagracia García Ros...
+I've put in what seems to be necessary to fix
+the current column of the current alignment.
+Try to go on, since this might almost work.
+
+/home/kikin/Proyectos/Reservas/Reservas/memo_reservas.tex:90: Extra }, or forgotten $.
+<inserted text> }
+                 
+l.90 \textbf{[[ solicitante_nombre ]]} &
+                                         \textbf{Lic. Altagracia García Ros...
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+/home/kikin/Proyectos/Reservas/Reservas/memo_reservas.tex:90: Missing } inserted.
+<inserted text> 
+                }
+l.90 \textbf{[[ solicitante_nombre ]]} &
+                                         \textbf{Lic. Altagracia García Ros...
+I've put in what seems to be necessary to fix
+the current column of the current alignment.
+Try to go on, since this might almost work.
+
+/home/kikin/Proyectos/Reservas/Reservas/memo_reservas.tex:90: Extra }, or forgotten $.
+<inserted text> }
+                 
+l.90 \textbf{[[ solicitante_nombre ]]} &
+                                         \textbf{Lic. Altagracia García Ros...
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+/home/kikin/Proyectos/Reservas/Reservas/memo_reservas.tex:90: Missing } inserted.
+<inserted text> 
+                }
+l.90 \textbf{[[ solicitante_nombre ]]} &
+                                         \textbf{Lic. Altagracia García Ros...
+I've put in what seems to be necessary to fix
+the current column of the current alignment.
+Try to go on, since this might almost work.
+
+/home/kikin/Proyectos/Reservas/Reservas/memo_reservas.tex:90: Extra }, or forgotten $.
+<inserted text> }
+                 
+l.90 \textbf{[[ solicitante_nombre ]]} &
+                                         \textbf{Lic. Altagracia García Ros...
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+/home/kikin/Proyectos/Reservas/Reservas/memo_reservas.tex:90: Missing } inserted.
+<inserted text> 
+                }
+l.90 \textbf{[[ solicitante_nombre ]]} &
+                                         \textbf{Lic. Altagracia García Ros...
+I've put in what seems to be necessary to fix
+the current column of the current alignment.
+Try to go on, since this might almost work.
+
+/home/kikin/Proyectos/Reservas/Reservas/memo_reservas.tex:90: Extra }, or forgotten $.
+<inserted text> }
+                 
+l.90 \textbf{[[ solicitante_nombre ]]} &
+                                         \textbf{Lic. Altagracia García Ros...
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+/home/kikin/Proyectos/Reservas/Reservas/memo_reservas.tex:90: Missing } inserted.
+<inserted text> 
+                }
+l.90 \textbf{[[ solicitante_nombre ]]} &
+                                         \textbf{Lic. Altagracia García Ros...
+I've put in what seems to be necessary to fix
+the current column of the current alignment.
+Try to go on, since this might almost work.
+
+/home/kikin/Proyectos/Reservas/Reservas/memo_reservas.tex:90: Extra }, or forgotten $.
+<inserted text> }
+                 
+l.90 \textbf{[[ solicitante_nombre ]]} &
+                                         \textbf{Lic. Altagracia García Ros...
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+/home/kikin/Proyectos/Reservas/Reservas/memo_reservas.tex:90: Missing } inserted.
+<inserted text> 
+                }
+l.90 \textbf{[[ solicitante_nombre ]]} &
+                                         \textbf{Lic. Altagracia García Ros...
+I've put in what seems to be necessary to fix
+the current column of the current alignment.
+Try to go on, since this might almost work.
+
+/home/kikin/Proyectos/Reservas/Reservas/memo_reservas.tex:90: Extra }, or forgotten $.
+<inserted text> }
+                 
+l.90 \textbf{[[ solicitante_nombre ]]} &
+                                         \textbf{Lic. Altagracia García Ros...
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+/home/kikin/Proyectos/Reservas/Reservas/memo_reservas.tex:90: Missing } inserted.
+<inserted text> 
+                }
+l.90 \textbf{[[ solicitante_nombre ]]} &
+                                         \textbf{Lic. Altagracia García Ros...
+I've put in what seems to be necessary to fix
+the current column of the current alignment.
+Try to go on, since this might almost work.
+
+/home/kikin/Proyectos/Reservas/Reservas/memo_reservas.tex:90: Extra }, or forgotten $.
+<inserted text> }
+                 
+l.90 \textbf{[[ solicitante_nombre ]]} &
+                                         \textbf{Lic. Altagracia García Ros...
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+/home/kikin/Proyectos/Reservas/Reservas/memo_reservas.tex:90: Missing } inserted.
+<inserted text> 
+                }
+l.90 \textbf{[[ solicitante_nombre ]]} &
+                                         \textbf{Lic. Altagracia García Ros...
+I've put in what seems to be necessary to fix
+the current column of the current alignment.
+Try to go on, since this might almost work.
+
+/home/kikin/Proyectos/Reservas/Reservas/memo_reservas.tex:90: Extra }, or forgotten $.
+<inserted text> }
+                 
+l.90 \textbf{[[ solicitante_nombre ]]} &
+                                         \textbf{Lic. Altagracia García Ros...
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+/home/kikin/Proyectos/Reservas/Reservas/memo_reservas.tex:90: Missing } inserted.
+<inserted text> 
+                }
+l.90 \textbf{[[ solicitante_nombre ]]} &
+                                         \textbf{Lic. Altagracia García Ros...
+I've put in what seems to be necessary to fix
+the current column of the current alignment.
+Try to go on, since this might almost work.
+
+/home/kikin/Proyectos/Reservas/Reservas/memo_reservas.tex:90: Extra }, or forgotten $.
+<inserted text> }
+                 
+l.90 \textbf{[[ solicitante_nombre ]]} &
+                                         \textbf{Lic. Altagracia García Ros...
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+/home/kikin/Proyectos/Reservas/Reservas/memo_reservas.tex:90: Missing } inserted.
+<inserted text> 
+                }
+l.90 \textbf{[[ solicitante_nombre ]]} &
+                                         \textbf{Lic. Altagracia García Ros...
+I've put in what seems to be necessary to fix
+the current column of the current alignment.
+Try to go on, since this might almost work.
+
+/home/kikin/Proyectos/Reservas/Reservas/memo_reservas.tex:90: Extra }, or forgotten $.
+<inserted text> }
+                 
+l.90 \textbf{[[ solicitante_nombre ]]} &
+                                         \textbf{Lic. Altagracia García Ros...
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+/home/kikin/Proyectos/Reservas/Reservas/memo_reservas.tex:90: Missing } inserted.
+<inserted text> 
+                }
+l.90 \textbf{[[ solicitante_nombre ]]} &
+                                         \textbf{Lic. Altagracia García Ros...
+I've put in what seems to be necessary to fix
+the current column of the current alignment.
+Try to go on, since this might almost work.
+
+/home/kikin/Proyectos/Reservas/Reservas/memo_reservas.tex:90: Extra }, or forgotten $.
+<inserted text> }
+                 
+l.90 \textbf{[[ solicitante_nombre ]]} &
+                                         \textbf{Lic. Altagracia García Ros...
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+/home/kikin/Proyectos/Reservas/Reservas/memo_reservas.tex:90: Missing } inserted.
+<inserted text> 
+                }
+l.90 \textbf{[[ solicitante_nombre ]]} &
+                                         \textbf{Lic. Altagracia García Ros...
+I've put in what seems to be necessary to fix
+the current column of the current alignment.
+Try to go on, since this might almost work.
+
+/home/kikin/Proyectos/Reservas/Reservas/memo_reservas.tex:90: Extra }, or forgotten $.
+<inserted text> }
+                 
+l.90 \textbf{[[ solicitante_nombre ]]} &
+                                         \textbf{Lic. Altagracia García Ros...
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+/home/kikin/Proyectos/Reservas/Reservas/memo_reservas.tex:90: Missing } inserted.
+<inserted text> 
+                }
+l.90 \textbf{[[ solicitante_nombre ]]} &
+                                         \textbf{Lic. Altagracia García Ros...
+I've put in what seems to be necessary to fix
+the current column of the current alignment.
+Try to go on, since this might almost work.
+
+/home/kikin/Proyectos/Reservas/Reservas/memo_reservas.tex:90: Extra }, or forgotten $.
+<inserted text> }
+                 
+l.90 \textbf{[[ solicitante_nombre ]]} &
+                                         \textbf{Lic. Altagracia García Ros...
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+/home/kikin/Proyectos/Reservas/Reservas/memo_reservas.tex:90: Missing } inserted.
+<inserted text> 
+                }
+l.90 \textbf{[[ solicitante_nombre ]]} &
+                                         \textbf{Lic. Altagracia García Ros...
+I've put in what seems to be necessary to fix
+the current column of the current alignment.
+Try to go on, since this might almost work.
+
+/home/kikin/Proyectos/Reservas/Reservas/memo_reservas.tex:90: Extra }, or forgotten $.
+<inserted text> }
+                 
+l.90 \textbf{[[ solicitante_nombre ]]} &
+                                         \textbf{Lic. Altagracia García Ros...
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+/home/kikin/Proyectos/Reservas/Reservas/memo_reservas.tex:90: Missing } inserted.
+<inserted text> 
+                }
+l.90 \textbf{[[ solicitante_nombre ]]} &
+                                         \textbf{Lic. Altagracia García Ros...
+I've put in what seems to be necessary to fix
+the current column of the current alignment.
+Try to go on, since this might almost work.
+
+/home/kikin/Proyectos/Reservas/Reservas/memo_reservas.tex:90: Extra }, or forgotten $.
+<inserted text> }
+                 
+l.90 \textbf{[[ solicitante_nombre ]]} &
+                                         \textbf{Lic. Altagracia García Ros...
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+/home/kikin/Proyectos/Reservas/Reservas/memo_reservas.tex:90: Missing } inserted.
+<inserted text> 
+                }
+l.90 \textbf{[[ solicitante_nombre ]]} &
+                                         \textbf{Lic. Altagracia García Ros...
+I've put in what seems to be necessary to fix
+the current column of the current alignment.
+Try to go on, since this might almost work.
+
+/home/kikin/Proyectos/Reservas/Reservas/memo_reservas.tex:90: Extra }, or forgotten $.
+<inserted text> }
+                 
+l.90 \textbf{[[ solicitante_nombre ]]} &
+                                         \textbf{Lic. Altagracia García Ros...
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+/home/kikin/Proyectos/Reservas/Reservas/memo_reservas.tex:90: Missing } inserted.
+<inserted text> 
+                }
+l.90 \textbf{[[ solicitante_nombre ]]} &
+                                         \textbf{Lic. Altagracia García Ros...
+I've put in what seems to be necessary to fix
+the current column of the current alignment.
+Try to go on, since this might almost work.
+
+/home/kikin/Proyectos/Reservas/Reservas/memo_reservas.tex:90: Extra }, or forgotten $.
+<inserted text> }
+                 
+l.90 \textbf{[[ solicitante_nombre ]]} &
+                                         \textbf{Lic. Altagracia García Ros...
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+/home/kikin/Proyectos/Reservas/Reservas/memo_reservas.tex:90: Missing } inserted.
+<inserted text> 
+                }
+l.90 \textbf{[[ solicitante_nombre ]]} &
+                                         \textbf{Lic. Altagracia García Ros...
+I've put in what seems to be necessary to fix
+the current column of the current alignment.
+Try to go on, since this might almost work.
+
+/home/kikin/Proyectos/Reservas/Reservas/memo_reservas.tex:90: Extra }, or forgotten $.
+<inserted text> }
+                 
+l.90 \textbf{[[ solicitante_nombre ]]} &
+                                         \textbf{Lic. Altagracia García Ros...
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+/home/kikin/Proyectos/Reservas/Reservas/memo_reservas.tex:90: Missing } inserted.
+<inserted text> 
+                }
+l.90 \textbf{[[ solicitante_nombre ]]} &
+                                         \textbf{Lic. Altagracia García Ros...
+I've put in what seems to be necessary to fix
+the current column of the current alignment.
+Try to go on, since this might almost work.
+
+/home/kikin/Proyectos/Reservas/Reservas/memo_reservas.tex:90: Extra }, or forgotten $.
+<inserted text> }
+                 
+l.90 \textbf{[[ solicitante_nombre ]]} &
+                                         \textbf{Lic. Altagracia García Ros...
+(That makes 100 errors; please try again.) 
 Here is how much of TeX's memory you used:
- 4161 strings out of 474222
- 66975 string characters out of 5748733
- 1925975 words of memory out of 5000000
- 26394 multiletter control sequences out of 15000+600000
- 566149 words of font info for 52 fonts, out of 8000000 for 9000
+ 4144 strings out of 474222
+ 66623 string characters out of 5748733
+ 1923975 words of memory out of 5000000
+ 26385 multiletter control sequences out of 15000+600000
+ 562857 words of font info for 49 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  57i,10n,65p,466b,365s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb>
-Output written on memo_reservas.pdf (1 page, 424731 bytes).
-PDF statistics:
- 41 PDF objects out of 1000 (max. 8388607)
- 24 compressed objects within 1 object stream
- 0 named destinations out of 1000 (max. 500000)
- 6 words of extra memory for PDF output out of 10000 (max. 10000000)
 
+/home/kikin/Proyectos/Reservas/Reservas/memo_reservas.tex:90:  ==> Fatal error occurred, no output PDF file produced!
