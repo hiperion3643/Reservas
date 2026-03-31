@@ -8,10 +8,11 @@
 \usepackage{fancyhdr}
 \usepackage{times}
 
+
 % Configuración de página
 \geometry{
     paper=a4paper,
-    margin=2.5cm,
+    margin=1.5cm,
     top=3.8cm,
     bottom=2.5cm,
     left=2.8cm,
@@ -43,18 +44,18 @@
 % Fecha y folio
 \noindent
 {\small \textbf{Cuatro Veces Heroica Puebla de Zaragoza, a \today}} \\
-{\small \textbf{Memorándum: USEP/SAC/DLMC/}\\
-{\small \textbf{Asunto:} \VARASUNTO}
+%{\small \textbf{Memorándum: USEP/SAC/DLMC/}\\
+{\small \textbf{Asunto:} [[ asunto ]]}
 
 \vspace{0.8cm}
 
 % Destinatario
 \noindent
-\textbf{\VARDESTINATARIO} \\
-\textbf{\VARDESTINATARIOPUESTO} \\
-\textbf{\VARDEPARTAMENTO}
+\textbf{[[ solicitante_nombre ]]} \\
+\textbf{[[ solicitante_puesto ]]} \\
+\textbf{[[ departamento ]]}
 
-\vspace{0.5cm}
+\vspace{0.5cm}    
 
 \noindent
 \textbf{PRESENTE}
@@ -63,12 +64,12 @@
 
 % Cuerpo del documento
 \noindent
-Con el gusto de saludarle y con fundamento en el título segundo, capítulo V, artículo 18, fracción II, III, IV, XIII, así como los artículos 33, 46 y 80 del Reglamento Interior de la Universidad de la Salud, me dirijo a usted para solicitar el préstamo de la unidad automovilística institucional \VARTEXTOFECHAS en un horario de \VARHORAINICIO a \VARHORAFIN horas; \VARDESTINOS
+Con el gusto de saludarle y con fundamento en el título segundo, capítulo V, artículo 18, fracción II, III, IV, XIII, así como los artículos 33, 46 y 80 del Reglamento Interior de la Universidad de la Salud, me dirijo a usted para solicitar el préstamo de la unidad automovilística institucional [[ texto_fechas ]] en un horario de [[ hora_inicio ]] a [[ hora_fin ]] horas; [[ destinos ]]
 
 \vspace{0.3cm}
 
 \noindent
-\VARTEXTOPERSONAL
+[[ texto_personal ]]
 
 \vspace{0.5cm}
 
@@ -85,8 +86,8 @@ Sin otro particular quedo de usted, agradeciendo su atención y apoyo.
 % Firma
 \noindent
 \rule{8cm}{0.4pt} \\
-\textbf{\VARSOLICITANTENOMBRE} \\
-\VARSOLICITANTEPUESTO
+\textbf{[[ solicitante_nombre ]]} \\
+[[ solicitante_puesto ]]
 
 \vspace{0.8cm}
 

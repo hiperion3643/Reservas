@@ -5,6 +5,7 @@ import os
 import tempfile
 import base64
 import shutil
+from jinja2 import Environment
 
 # Configuración de página
 st.set_page_config(
@@ -43,29 +44,18 @@ def verificar_latex():
         return False
 
 def generar_latex_con_datos(datos):
-    """Lee la plantilla LaTeX y reemplaza las variables con los datos del formulario"""
+    """Lee la plantilla LaTeX y reemplaza las variables usando Jinja2"""
     
     # Leer plantilla LaTeX
     with open('memo_reservas.tex', 'r', encoding='utf-8') as f:
-        latex_code = f.read()
+        template_content = f.read()
     
-    # Reemplazar variables
-    replacements = {
-        '\\VARFOLIO': datos['folio'],
-        '\\VARASUNTO': datos['asunto'],
-        '\\VARTEXTOFECHAS': datos['texto_fechas'],
-        '\\VARHORAINICIO': datos['hora_inicio'],
-        '\\VARHORAFIN': datos['hora_fin'],
-        '\\VARDESTINOS': datos['destinos'],
-        '\\VARTEXTOPERSONAL': datos['texto_personal'],
-        '\\VARSOLICITANTENOMBRE': datos['solicitante_nombre'],
-        '\\VARSOLICITANTEPUESTO': datos['solicitante_puesto'],
-        '\\VARDEPARTAMENTO': datos['departamento'],
-        '\\VARELABORO': datos['elaboro']
-    }
+    # Crear Environment de Jinja2 con delimitadores que no conflicten con LaTeX
+    env = Environment(variable_start_string='[[', variable_end_string=']]')
+    template = env.from_string(template_content)
     
-    for var, valor in replacements.items():
-        latex_code = latex_code.replace(var, valor)
+    # Renderizar con los datos
+    latex_code = template.render(**datos)
     
     return latex_code
 
@@ -266,10 +256,14 @@ with st.form("solicitud_form"):
             # Generar folio
             folio = datetime.now().strftime("%Y%m%d%H%M%S")
             
-            # Preparar datos para LaTeX
-            datos_latex = {
+            # Fecha actual formateada
+            fecha_actual = fecha_espanol(datetime.now())
+            
+            # Preparar datos para Jinja2
+            datos_template = {
                 'folio': folio,
                 'asunto': asunto,
+                'fecha_actual': fecha_actual,
                 'texto_fechas': texto_fechas,
                 'hora_inicio': hora_inicio.strftime("%H:%M"),
                 'hora_fin': hora_fin.strftime("%H:%M"),
@@ -278,12 +272,16 @@ with st.form("solicitud_form"):
                 'solicitante_nombre': solicitante_nombre.upper(),
                 'solicitante_puesto': solicitante_puesto.upper(),
                 'departamento': departamento.upper(),
-                'elaboro': obtener_iniciales(solicitante_nombre)
+                'elaboro': obtener_iniciales(solicitante_nombre),
+                'fecha_uso': fecha_uso.strftime("%d/%m/%Y"),
+                'fecha_regreso': fecha_regreso.strftime("%d/%m/%Y"),
+                'numero_personas': numero_personas,
+                'destinos_lista': destinos_filtrados  # Para posible uso avanzado
             }
             
             # Generar y compilar
             with st.spinner("Generando memorandum..."):
-                latex_code = generar_latex_con_datos(datos_latex)
+                latex_code = generar_latex_con_datos(datos_template)
                 
                 with tempfile.TemporaryDirectory() as tmpdirname:
                     pdf_bytes = compilar_pdf(latex_code, tmpdirname)
