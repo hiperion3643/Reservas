@@ -232,21 +232,8 @@ with st.form("solicitud_form"):
         elif fecha_regreso < fecha_uso:
             st.error("❌ La fecha de regreso no puede ser menor a la fecha de salida")
         else:
-            # Preparar texto de destinos
+            # Preparar destinos
             destinos_filtrados = [d for d in destinos_data if d['nombre'] and d['ubicacion']]
-            
-            if destinos_filtrados:
-                destinos_texto = "El vehículo será utilizado para visitar los siguientes lugares:\n\n"
-                for i, d in enumerate(destinos_filtrados, 1):
-                    destinos_texto += f"{i}. {d['nombre']}\n"
-                    destinos_texto += f"   Ubicación: {d['ubicacion']}\n"
-                    if d.get('motivo'):
-                        destinos_texto += f"   Motivo: {d['motivo']}\n"
-                    destinos_texto += "\n"
-            elif motivo_general:
-                destinos_texto = f"El vehículo será utilizado para: {motivo_general}"
-            else:
-                destinos_texto = "No se especificaron destinos."
             
             # Texto de personal
             if numero_personas == 1:
@@ -274,7 +261,6 @@ with st.form("solicitud_form"):
                 'texto_fechas': texto_fechas,
                 'hora_inicio': hora_inicio.strftime("%H:%M"),
                 'hora_fin': hora_fin.strftime("%H:%M"),
-                'destinos': destinos_texto,
                 'texto_personal': texto_personal,
                 'solicitante_nombre': solicitante_nombre.title(),
                 'solicitante_puesto': solicitante_puesto.title(),
@@ -283,7 +269,7 @@ with st.form("solicitud_form"):
                 'fecha_uso': fecha_uso.strftime("%d/%m/%Y"),
                 'fecha_regreso': fecha_regreso.strftime("%d/%m/%Y"),
                 'numero_personas': numero_personas,
-                'destinos_lista': destinos_filtrados  # Para posible uso avanzado
+                'destinos_lista': destinos_filtrados
             }
             
             # Generar y compilar

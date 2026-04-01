@@ -64,7 +64,19 @@
 
 % Cuerpo del documento
 \noindent
-Con el gusto de saludarle y con fundamento en el título segundo, capítulo V, artículo 18, fracción II, III, IV, XIII, así como los artículos 33, 46 y 80 del Reglamento Interior de la Universidad de la Salud, me dirijo a usted para solicitar el préstamo de la unidad automovilística institucional [[ texto_fechas ]] en un horario de [[ hora_inicio ]] a [[ hora_fin ]] horas; [[ destinos ]]
+Con el gusto de saludarle y con fundamento en el título segundo, capítulo V, artículo 18, fracción II, III, IV, XIII, así como los artículos 33, 46 y 80 del Reglamento Interior de la Universidad de la Salud, me dirijo a usted para solicitar el préstamo de la unidad automovilística institucional [[ texto_fechas ]] en un horario de [[ hora_inicio ]] a [[ hora_fin ]] horas; El vehículo será utilizado para visitar los siguientes lugares:
+
+\vspace{0.3cm}
+
+\begin{tabular}{|l|l|l|}
+\hline
+\textbf{Lugar} & \textbf{Ubicación} & \textbf{Motivo} \\
+\hline
+<BLOCK> for destino in destinos_lista </BLOCK>
+[[ destino.nombre ]] & [[ destino.ubicacion ]] & [[ destino.motivo ]] \\
+\hline
+<BLOCK> endfor </BLOCK>
+\end{tabular}
 
 \vspace{0.3cm}
 
@@ -86,10 +98,10 @@ Sin otro particular quedo de usted, agradeciendo su atención y apoyo.
 % Firmas - Tres columnas
 \noindent
 \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}ccc}
-    \textbf{Solicita} & \textbf{Revisó} & \textbf{Revisó} \\ [2ex]
+    \textbf{Solicita} & \textbf{Revisó} & \textbf{Revisó} \\ [4ex]
     \rule{5cm}{0.4pt} & \rule{5cm}{0.4pt} & \rule{5cm}{0.4pt} \\
-    \textbf{solicitante\_nombre} & \textbf{Lic. Altagracia García Rosas} & \textbf{Alfonso Chávez Morales} \\
-    solicitante\_puesto & Secretaría Administrativa & Director del Departamento de \\
+    \textbf{[[ solicitante_nombre ]]} & \textbf{Lic. Altagracia García Rosas} & \textbf{Alfonso Chávez Morales} \\
+    \textbf{[[ solicitante_puesto ]]} & Secretaría Administrativa & Director del Departamento de \\
     & & Recursos Materiales \\
 \end{tabular*}
 
