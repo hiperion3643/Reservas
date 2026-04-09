@@ -6,6 +6,7 @@ import tempfile
 import base64
 import shutil
 from jinja2 import Environment
+import pandas as pd
 
 # Configuración de página
 st.set_page_config(
@@ -232,71 +233,76 @@ with st.form("solicitud_form"):
         elif fecha_regreso < fecha_uso:
             st.error("❌ La fecha de regreso no puede ser menor a la fecha de salida")
         else:
-            # Preparar destinos
+            # Preparar destinos - Crear DataFrame
             destinos_filtrados = [d for d in destinos_data if d['nombre'] and d['ubicacion']]
             
-            # Texto de personal
-            if numero_personas == 1:
-                texto_personal = f"El personal que realizará el viaje estará a cargo del C. {solicitante_nombre}, {solicitante_puesto} del Departamento de {departamento}."
+            if not destinos_filtrados:
+                st.error("❌ Debe agregar al menos un destino con nombre y ubicación")
             else:
-                texto_personal = f"El personal que realizará el viaje estará a cargo del C. {solicitante_nombre}, {solicitante_puesto} del Departamento de {departamento}, junto con {numero_personas - 1} personas adicionales."
-            
-            # Texto de fechas
-            if fecha_uso == fecha_regreso:
-                texto_fechas = f"el día {fecha_uso.strftime('%d/%m/%Y')}"
-            else:
-                texto_fechas = f"del día {fecha_uso.strftime('%d/%m/%Y')} al {fecha_regreso.strftime('%d/%m/%Y')}"
-            
-            # Generar folio
-            folio = datetime.now().strftime("%Y%m%d%H%M%S")
-            
-            # Fecha actual formateada
-            fecha_actual = fecha_espanol(datetime.now())
-            
-            # Preparar datos para Jinja2
-            datos_template = {
-                'folio': folio,
-                'asunto': asunto,
-                'fecha_actual': fecha_actual,
-                'texto_fechas': texto_fechas,
-                'hora_inicio': hora_inicio.strftime("%H:%M"),
-                'hora_fin': hora_fin.strftime("%H:%M"),
-                'texto_personal': texto_personal,
-                'solicitante_nombre': solicitante_nombre.title(),
-                'solicitante_puesto': solicitante_puesto.title(),
-                'departamento': departamento.title(),
-                'elaboro': obtener_iniciales(solicitante_nombre),
-                'fecha_uso': fecha_uso.strftime("%d/%m/%Y"),
-                'fecha_regreso': fecha_regreso.strftime("%d/%m/%Y"),
-                'numero_personas': numero_personas,
-                'destinos_lista': destinos_filtrados
-            }
-            
-            # Generar y compilar
-            with st.spinner("Generando memorandum..."):
-                latex_code = generar_latex_con_datos(datos_template)
+                # Crear DataFrame de destinos
+                df_destinos = pd.DataFrame(destinos_filtrados)
+                df_destinos.columns = ['nombre', 'ubicacion', 'motivo']
                 
-                with tempfile.TemporaryDirectory() as tmpdirname:
-                    pdf_bytes = compilar_pdf(latex_code, tmpdirname)
+                # Texto de personal
+                if numero_personas == 1:
+                    texto_personal = f"El personal que realizará el viaje estará a cargo del C. {solicitante_nombre}, {solicitante_puesto} del Departamento de {departamento}."
+                else:
+                    texto_personal = f"El personal que realizará el viaje estará a cargo del C. {solicitante_nombre}, {solicitante_puesto} del Departamento de {departamento}, junto con {numero_personas - 1} personas adicionales."
+                
+                # Texto de fechas
+                if fecha_uso == fecha_regreso:
+                    texto_fechas = f"el día {fecha_uso.strftime('%d/%m/%Y')}"
+                else:
+                    texto_fechas = f"del día {fecha_uso.strftime('%d/%m/%Y')} al {fecha_regreso.strftime('%d/%m/%Y')}"
+                
+                # Generar folio
+                folio = datetime.now().strftime("%Y%m%d%H%M%S")
+                
+                # Fecha actual formateada
+                fecha_actual = fecha_espanol(datetime.now())
+                
+                # Preparar datos para Jinja2
+                datos_template = {
+                    'folio': folio,
+                    'asunto': asunto,
+                    'fecha_actual': fecha_actual,
+                    'texto_fechas': texto_fechas,
+                    'hora_inicio': hora_inicio.strftime("%H:%M"),
+                    'hora_fin': hora_fin.strftime("%H:%M"),
+                    'texto_personal': texto_personal,
+                    'solicitante_nombre': solicitante_nombre.title(),
+                    'solicitante_puesto': solicitante_puesto.title(),
+                    'departamento': departamento.title(),
+                    'elaboro': obtener_iniciales(solicitante_nombre),
+                    'fecha_uso': fecha_uso.strftime("%d/%m/%Y"),
+                    'fecha_regreso': fecha_regreso.strftime("%d/%m/%Y"),
+                    'numero_personas': numero_personas,
+                    'destinos_lista': destinos_filtrados
+                }
+                
+                # Generar y compilar
+                with st.spinner("Generando memorandum..."):
+                    latex_code = generar_latex_con_datos(datos_template)
                     
-                    if pdf_bytes:
-                        st.success("✅ Memorandum generado exitosamente")
-                        filename = f"Memorandum_{folio}.pdf"
-                        st.markdown(get_download_link(pdf_bytes, filename), unsafe_allow_html=True)
+                    with tempfile.TemporaryDirectory() as tmpdirname:
+                        pdf_bytes = compilar_pdf(latex_code, tmpdirname)
                         
-                        # Mostrar resumen
-                        with st.expander("📋 Ver resumen del memorandum"):
-                            st.write(f"**Folio:** {folio}")
-                            st.write(f"**Solicitante:** {solicitante_nombre}")
-                            st.write(f"**Período:** {texto_fechas}")
-                            st.write(f"**Horario:** {hora_inicio.strftime('%H:%M')} - {hora_fin.strftime('%H:%M')}")
-                            st.write(f"**Total personas:** {numero_personas}")
-                            if destinos_filtrados:
+                        if pdf_bytes:
+                            st.success("✅ Memorandum generado exitosamente")
+                            filename = f"Memorandum_{folio}.pdf"
+                            st.markdown(get_download_link(pdf_bytes, filename), unsafe_allow_html=True)
+                            
+                            # Mostrar resumen
+                            with st.expander("📋 Ver resumen del memorandum"):
+                                st.write(f"**Folio:** {folio}")
+                                st.write(f"**Solicitante:** {solicitante_nombre}")
+                                st.write(f"**Período:** {texto_fechas}")
+                                st.write(f"**Horario:** {hora_inicio.strftime('%H:%M')} - {hora_fin.strftime('%H:%M')}")
+                                st.write(f"**Total personas:** {numero_personas}")
                                 st.write("**Destinos:**")
-                                for d in destinos_filtrados:
-                                    st.write(f"- {d['nombre']} ({d['ubicacion']})")
-                    else:
-                        st.error("❌ Error al generar el PDF. Revisa los mensajes de error arriba.")
+                                st.dataframe(df_destinos, hide_index=True, use_container_width=True)
+                        else:
+                            st.error("❌ Error al generar el PDF. Revisa los mensajes de error arriba.")
 
 st.markdown("---")
 st.markdown("© 2025 - Sistema de Generación de Memorandums")

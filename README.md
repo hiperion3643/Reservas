@@ -1,51 +1,97 @@
-# Generador de Memorandums para Solicitud de Vehículos
+# 📄 Generador de Memorandums de Solicitud de Vehículos
 
-Esta aplicación permite generar memorandums para solicitar vehículos institucionales en formato PDF.
+Sistema automatizado para generar memorandums institucionales con tabla de destinos formateada, optimizado para impresión en **tamaño carta**.
 
-## Requisitos
+## ✨ Mejoras v2.0
 
-- Python 3.8 o superior
-- Las siguientes dependencias de Python:
-  - streamlit
-  - reportlab
+- ✅ **Formato Letter (Tamaño Carta)**: Página optimizada para impresoras estándar
+- ✅ **DataFrame de Pandas**: Manejo robusto de datos de destinos
+- ✅ **Tabla LaTeX adaptada**: Columnas con ancho fijo para mejor presentación
+- ✅ **Márgenes calibrados**: Ajustados para el tamaño carta
+- ✅ **Validación mejorada**: Previene errores antes de generar PDF
 
-## Instalación
+## 📋 Requisitos
 
-1. Clone o descargue este repositorio
-2. Instale las dependencias necesarias:
+- Python 3.8+
+- LaTeX instalado:
+  - **Windows**: MiKTeX
+  - **Linux**: TeX Live
+  - **Mac**: MacTeX
+- Archivo `Hoja_Membretada.pdf` en el directorio raíz
+
+## ⚙️ Instalación
 
 ```bash
-pip install streamlit reportlab
+pip install -r requirements.txt
 ```
 
-## Cómo ejecutar la aplicación
-
-Para ejecutar la aplicación, utilice el siguiente comando:
+## 🚀 Uso
 
 ```bash
 streamlit run app.py
 ```
 
-**Importante:** No ejecute la aplicación directamente con `python app.py`, ya que esto generará advertencias y no funcionará correctamente.
+### Pasos para generar un memorandum
 
-## Uso
+1. **Información del Solicitante**
+   - Nombre completo
+   - Puesto
+   - Departamento
+   - Asunto
 
-1. Complete todos los campos del formulario
-2. Agregue tantos destinos como necesite usando el botón "+"
-3. Especifique la ubicación exacta de cada destino
-4. Haga clic en "Generar Memorandum"
-5. Descargue el PDF generado
-6. Presente el documento en la secretaría administrativa
+2. **Fechas y Horarios**
+   - Fecha de salida
+   - Fecha de regreso
+   - Hora de inicio
+   - Hora de regreso
 
-## Notas importantes
+3. **Destinos** *(almacenados en DataFrame)*
+   - Click en "➕ Agregar destino"
+   - Ingrese: Lugar, Ubicación, Motivo
+   - Los datos se procesan automáticamente
+
+4. **Personal**
+   - Total de personas que viajan
+
+5. **Generar**
+   - Click en "Generar Memorandum"
+   - Descargue el PDF
+
+## 📐 Especificaciones Técnicas
+
+### Configuración de Página
+```
+Tipo:        Letter (Carta) - 8.5" × 11"
+Márgenes:    2.5cm (laterales), 3.8cm (superior), 2.5cm (inferior)
+```
+
+### Tabla de Destinos
+```
+Columnas:    Lugar (3.5cm) | Ubicación (3.5cm) | Motivo (4cm)
+Origen:      DataFrame de Pandas
+Formato:     Tabla LaTeX con bordes
+```
+
+## 📦 Archivos Requeridos
+
+```
+├── app.py                    # Aplicación Streamlit
+├── memo_reservas.tex         # Plantilla LaTeX (letra)
+├── Hoja_Membretada.pdf       # Membrete institucional
+├── requirements.txt          # Dependencias
+└── README.md
+```
+
+## 📝 Notas Importantes
 
 - Los campos con * son obligatorios
-- Puede agregar múltiples destinos con sus ubicaciones específicas
-- El folio se genera automáticamente con fecha y hora
-- El memorandum se genera en formato PDF listo para imprimir
+- Mínimo un destino con Lugar y Ubicación
+- Fecha en español automático
+- Folio generado por timestamp
+- Tabla dinámica según número de destinos
+- Validación de datos antes de compilar
 
-## Contacto
+## 📧 Contacto
 
-Para dudas o soporte:
-- 📧 oficialia.partes@usalud.edu.mx
+- 📧 officialia.partes@usalud.edu.mx
 - 📞 22 26 90 06 13

@@ -11,12 +11,12 @@
 
 % Configuración de página
 \geometry{
-    paper=a4paper,
+    paper=letterpaper,
     margin=1.5cm,
     top=3.8cm,
     bottom=2.5cm,
-    left=2.8cm,
-    right=2.8cm
+    left=2.5cm,
+    right=2.5cm
 }
 
 % Agregar la plantilla PDF como fondo
@@ -66,9 +66,10 @@
 \noindent
 Con el gusto de saludarle y con fundamento en el título segundo, capítulo V, artículo 18, fracción II, III, IV, XIII, así como los artículos 33, 46 y 80 del Reglamento Interior de la Universidad de la Salud, me dirijo a usted para solicitar el préstamo de la unidad automovilística institucional [[ texto_fechas ]] en un horario de [[ hora_inicio ]] a [[ hora_fin ]] horas; El vehículo será utilizado para visitar los siguientes lugares:
 
-\vspace{0.3cm}
+\vspace{0.2cm}
 
-\begin{tabular}{|l|l|l|}
+{\small
+\begin{tabular}{|p{3.5cm}|p{3.5cm}|p{4cm}|}
 \hline
 \textbf{Lugar} & \textbf{Ubicación} & \textbf{Motivo} \\
 \hline
@@ -77,8 +78,9 @@ Con el gusto de saludarle y con fundamento en el título segundo, capítulo V, a
 \hline
 <BLOCK> endfor </BLOCK>
 \end{tabular}
+}
 
-\vspace{0.3cm}
+\vspace{0.2cm}
 
 \noindent
 [[ texto_personal ]]
