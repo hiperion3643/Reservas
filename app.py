@@ -5,6 +5,7 @@ import os
 import tempfile
 import base64
 import shutil
+from urllib.parse import quote
 from jinja2 import Environment
 import pandas as pd
 
@@ -126,6 +127,12 @@ def get_download_link(pdf_bytes, filename):
     href += '</button></a>'
     return href
 
+
+def get_whatsapp_link(phone, message):
+    """Genera un enlace de WhatsApp con mensaje prellenado"""
+    encoded_message = quote(message)
+    return f"https://api.whatsapp.com/send?phone={phone}&text={encoded_message}"
+
 # Sidebar
 with st.sidebar:
     st.header("📋 Instrucciones")
@@ -164,6 +171,16 @@ with st.sidebar:
 # Inicializar sesión para destinos
 if 'destinos' not in st.session_state:
     st.session_state.destinos = [{'nombre': '', 'ubicacion': '', 'motivo': ''}]
+
+# Inicializar variables de sesión para el PDF generado
+if 'pdf_bytes' not in st.session_state:
+    st.session_state.pdf_bytes = None
+if 'pdf_filename' not in st.session_state:
+    st.session_state.pdf_filename = None
+if 'show_download' not in st.session_state:
+    st.session_state.show_download = False
+if 'whatsapp_url' not in st.session_state:
+    st.session_state.whatsapp_url = None
 
 # Formulario principal
 with st.form("solicitud_form"):
@@ -289,8 +306,27 @@ with st.form("solicitud_form"):
                         
                         if pdf_bytes:
                             st.success("✅ Memorandum generado exitosamente")
-                            filename = f"Memorandum_{folio}.pdf"
-                            st.markdown(get_download_link(pdf_bytes, filename), unsafe_allow_html=True)
+                            
+                            # Guardar en session state para mostrar fuera del form
+                            st.session_state.pdf_bytes = pdf_bytes
+                            st.session_state.pdf_filename = f"Memorandum_{folio}.pdf"
+                            st.session_state.show_download = True
+                            
+                            # Preparar mensaje para WhatsApp
+                            destinos_texto = []
+                            for d in destinos_filtrados:
+                                motivo_texto = d['motivo'] if d['motivo'] else 'sin motivo adicional'
+                                destinos_texto.append(f"- {d['nombre']}, {d['ubicacion']} ({motivo_texto})")
+                            mensaje_whatsapp = (
+                                "Solicitud de viaje\n"
+                                f"Folio: {folio}\n"
+                                f"Solicitante: {solicitante_nombre}\n"
+                                f"Período: {texto_fechas}\n"
+                                f"Horario: {hora_inicio.strftime('%H:%M')} - {hora_fin.strftime('%H:%M')}\n"
+                                f"Total personas: {numero_personas}\n"
+                                f"Destinos:\n" + "\n".join(destinos_texto)
+                            )
+                            st.session_state.whatsapp_url = get_whatsapp_link('522224884437', mensaje_whatsapp)
                             
                             # Mostrar resumen
                             with st.expander("📋 Ver resumen del memorandum"):
@@ -303,6 +339,34 @@ with st.form("solicitud_form"):
                                 st.dataframe(df_destinos, hide_index=True, use_container_width=True)
                         else:
                             st.error("❌ Error al generar el PDF. Revisa los mensajes de error arriba.")
+
+# Sección de descarga fuera del formulario
+if st.session_state.show_download and st.session_state.pdf_bytes:
+    st.divider()
+    st.header("📥 Descargar y Enviar Memorandum")
+    
+    col1, col2 = st.columns(2)
+    
+    with col1:
+        st.download_button(
+            label="📥 Descargar Memorandum PDF",
+            data=st.session_state.pdf_bytes,
+            file_name=st.session_state.pdf_filename,
+            mime="application/pdf",
+            use_container_width=True
+        )
+    
+    with col2:
+        if st.session_state.whatsapp_url:
+            st.markdown(
+                f'<a href="{st.session_state.whatsapp_url}" target="_blank">'
+                '<button style="background-color: #25D366; color: white; padding: 12px 24px; border: none; border-radius: 5px; cursor: pointer; font-size: 16px; font-weight: bold; width: 100%;">'
+                '📲 Enviar por WhatsApp al 2224884437'
+                '</button></a>',
+                unsafe_allow_html=True
+            )
+    
+    st.caption("💡 Descarga el PDF primero, luego haz clic en 'Enviar por WhatsApp' para abrir el chat y adjuntar el archivo descargado.")
 
 st.markdown("---")
 st.markdown("© 2025 - Sistema de Generación de Memorandums")
