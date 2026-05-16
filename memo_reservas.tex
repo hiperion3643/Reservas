@@ -42,35 +42,37 @@
 
 \begin{document}
 
-% Fecha y folio
+% Fecha y folio al lado derecho
 \noindent
-{\small \textbf{Cuatro Veces Heroica Puebla de Zaragoza, a \today}} \\
-%{\small \textbf{Memorándum: USEP/SAC/DLMC/}\\
+\begin{flushright}
+{\small \textbf{Cuatro Veces Heroica Puebla de Zaragoza, a [[ fecha_actual ]]}} \\
+{\small \textbf{Memorándum: [[ numero_memorandum ]]}} \\
 {\small \textbf{Asunto:} [[ asunto ]]}
+\end{flushright}
 
-\vspace{0.8cm}
+\vspace{0.3cm}
 
 % Destinatario
 \noindent
-\textbf{[[ solicitante_nombre ]]} \\
-\textbf{[[ solicitante_puesto ]] de [[ departamento ]]} \\
+\textbf{C. Altagracia  García Rosas} \\
+\textbf{Secretaria Administrativa} \\
 
-\vspace{0.5cm}    
+\vspace{0.3cm}    
 
 \noindent
 \textbf{PRESENTE}
 
-\vspace{0.5cm}
+\vspace{0.3cm}
 
 % Cuerpo del documento
 \noindent
-Con el gusto de saludarle y con fundamento en los artículos 30 fracciones I y VI del Reglamento Interior de la Universidad de la Salud, así como en el Artículo 29 fracción I relativo a la administración de recursos materiales, me dirijo a usted para solicitar el préstamo de la unidad automovilística institucional [[ texto_fechas ]] en un horario de [[ hora_inicio ]] a [[ hora_fin ]] horas; El vehículo será utilizado para visitar los siguientes lugares:
+Con el gusto de saludarle y con fundamento en los artículos [[ articulos ]] del Reglamento Interior de la Universidad de la Salud, me dirijo a usted para solicitar el préstamo de la unidad automovilística institucional [[ texto_fechas ]] en un horario de [[ hora_inicio ]] a [[ hora_fin ]] horas; El vehículo será utilizado para visitar los siguientes lugares:
 
 
 \vspace{0.2cm}
 
 {\small
-\begin{tabular}{|p{3.5cm}|p{3.5cm}|p{4cm}|}
+\begin{tabular}{|p{3.5cm}|p{7cm}|p{4cm}|}
 \hline
 \textbf{Lugar} & \textbf{Ubicación} & \textbf{Motivo} \\
 \hline
@@ -89,7 +91,7 @@ Con el gusto de saludarle y con fundamento en los artículos 30 fracciones I y V
 \noindent
 Sin otro particular quedo de usted, agradeciendo su atención y apoyo.
 
-\vspace{0.3cm}
+\vspace{0.2cm}
 
 \noindent
 %\textbf{ATENTAMENTE}
@@ -98,28 +100,14 @@ Sin otro particular quedo de usted, agradeciendo su atención y apoyo.
 % Firmas - Tres columnas
 \noindent
 \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}ccc}
-    \textbf{Entrega del Vehículo} & \textbf{Revisó} & \textbf{Revisó} \\ [4ex]
+     & \textbf{ATENTAMENTE} & \\ [4ex]
     \rule{5cm}{0.4pt} & \rule{5cm}{0.4pt} & \rule{5cm}{0.4pt} \\
-    \textbf{Luis Enrique Muñoz Juárez} & \textbf{Lic. Altagracia García Rosas} & \textbf{Alfonso Chávez Morales} \\
-    Analista del Departamento de & Secretaría Administrativa & Director del Departamento de \\
-    Recursos Materiales & & Recursos Materiales \\
+     & \textbf{C. [[ nombre_jefe ]]} &  \\
+     & [[ cargo_jefe ]] &  \\ \\
+     & &  \\
 \end{tabular*}
 
 \vspace{0.3cm} % Espacio vertical entre las firmas de arriba y la de abajo
-
-% Firma del solicitante centrada
-\begin{center}
-    \textbf{Solicita} \\ [4ex]
-    \rule{5cm}{0.4pt} \\
-    \textbf{[[ solicitante_nombre ]]} \\
-    [[ solicitante_puesto ]] de [[ departamento ]]
-\end{center}
-
-
-
-
-\vspace{0.8cm}
-
 
 % Pie de página
 \noindent

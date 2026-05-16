@@ -1,4 +1,4 @@
-#!/home/kikin/Proyectos/Reservas/Reservas/venv/bin/python3
+#!/home/kikin3643/Documents/Proyectos/Reservas/venv/bin/python3
 # -*- coding: utf-8 -*-
 import re
 import sys

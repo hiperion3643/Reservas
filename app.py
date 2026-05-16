@@ -19,6 +19,16 @@ st.set_page_config(
 st.title("📄 Generador de Memorandums para Solicitud de Vehículos")
 st.markdown("Complete el formulario para generar su memorandum con la plantilla institucional")
 
+# Mapeo de áreas a artículos (siempre incluye el 30)
+ARTICULOS_POR_AREA = {
+    "Académica / Médico Cirujano / Enfermería": ["30", "19-XI", "19-XII", "20-VI", "21-VI"],
+    "Planeación y Evaluación": ["30", "22-I", "22-XIII"],
+    "Vinculación y Extensión": ["30", "26-III", "26-IV", "26-V", "27-VI"],
+    "Administrativa (no Recursos Materiales)": ["30", "29-I", "29-X"],
+    "Capital Humano": ["30", "31-XIII"],
+    "Abogado General": ["30", "16-III", "16-XIX"]
+}
+
 # Funciones auxiliares
 def obtener_iniciales(nombre_completo):
     """Obtiene las primeras 4 iniciales del nombre"""
@@ -191,10 +201,12 @@ with st.form("solicitud_form"):
     with col1:
         solicitante_nombre = st.text_input("Nombre completo del solicitante *")
         solicitante_puesto = st.text_input("Puesto del solicitante *")
-        departamento = st.text_input("Departamento de adscripción *")
+        #departamento = st.text_input("Departamento de adscripción *")
+        area_seleccionada = st.selectbox("Área *", list(ARTICULOS_POR_AREA.keys()))
         
     with col2:
         asunto = st.text_input("Asunto *", value="Solicitud de vehículo institucional")
+        numero_memorandum = st.text_input("Número de Memorandum *", placeholder="Ej: 001/2025")
         fecha_uso = st.date_input("Fecha de salida *", min_value=date.today())
         fecha_regreso = st.date_input("Fecha de regreso *", min_value=date.today())
         
@@ -245,11 +257,15 @@ with st.form("solicitud_form"):
             st.error("❌ No se encuentra el archivo memo_reservas.tex")
         elif not verificar_latex():
             st.error("❌ LaTeX no está instalado correctamente")
-        elif not all([solicitante_nombre, solicitante_puesto, departamento]):
+        elif not all([solicitante_nombre, solicitante_puesto, numero_memorandum]): 
             st.error("❌ Complete todos los campos obligatorios (marcados con *)")
         elif fecha_regreso < fecha_uso:
             st.error("❌ La fecha de regreso no puede ser menor a la fecha de salida")
         else:
+            # Obtener artículos según el área seleccionada
+            articulos_asignados = ARTICULOS_POR_AREA.get(area_seleccionada, ["30"])
+            articulos_texto = ", ".join(articulos_asignados)
+            
             # Preparar destinos - Crear DataFrame
             destinos_filtrados = [d for d in destinos_data if d['nombre'] and d['ubicacion']]
             
@@ -262,9 +278,9 @@ with st.form("solicitud_form"):
                 
                 # Texto de personal
                 if numero_personas == 1:
-                    texto_personal = f"El personal que realizará el viaje estará a cargo del C. {solicitante_nombre}, {solicitante_puesto} del Departamento de {departamento}."
+                    texto_personal = f"El personal que realizará el viaje estará a cargo del C. {solicitante_nombre}, {solicitante_puesto} del Departamento de {area_seleccionada}."
                 else:
-                    texto_personal = f"El personal que realizará el viaje estará a cargo del C. {solicitante_nombre}, {solicitante_puesto} del Departamento de {departamento}, junto con {numero_personas - 1} personas adicionales."
+                    texto_personal = f"El personal que realizará el viaje estará a cargo del C. {solicitante_nombre}, {solicitante_puesto} del Departamento de {area_seleccionada}, junto con {numero_personas - 1} personas adicionales."
                 
                 # Texto de fechas
                 if fecha_uso == fecha_regreso:
@@ -283,13 +299,15 @@ with st.form("solicitud_form"):
                     'folio': folio,
                     'asunto': asunto,
                     'fecha_actual': fecha_actual,
+                    'numero_memorandum': numero_memorandum,
+                    'articulos': articulos_texto,
                     'texto_fechas': texto_fechas,
                     'hora_inicio': hora_inicio.strftime("%H:%M"),
                     'hora_fin': hora_fin.strftime("%H:%M"),
                     'texto_personal': texto_personal,
                     'solicitante_nombre': solicitante_nombre.title(),
                     'solicitante_puesto': solicitante_puesto.title(),
-                    'departamento': departamento.title(),
+                    'area_seleccionada': area_seleccionada.title(),
                     'elaboro': obtener_iniciales(solicitante_nombre),
                     'fecha_uso': fecha_uso.strftime("%d/%m/%Y"),
                     'fecha_regreso': fecha_regreso.strftime("%d/%m/%Y"),
@@ -331,7 +349,10 @@ with st.form("solicitud_form"):
                             # Mostrar resumen
                             with st.expander("📋 Ver resumen del memorandum"):
                                 st.write(f"**Folio:** {folio}")
+                                st.write(f"**Número de Memorandum:** {numero_memorandum}")
                                 st.write(f"**Solicitante:** {solicitante_nombre}")
+                                st.write(f"**Área:** {area_seleccionada}")
+                                st.write(f"**Artículos:** {articulos_texto}")
                                 st.write(f"**Período:** {texto_fechas}")
                                 st.write(f"**Horario:** {hora_inicio.strftime('%H:%M')} - {hora_fin.strftime('%H:%M')}")
                                 st.write(f"**Total personas:** {numero_personas}")
