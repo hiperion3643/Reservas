@@ -19,14 +19,23 @@ st.set_page_config(
 st.title("📄 Generador de Memorandums para Solicitud de Vehículos")
 st.markdown("Complete el formulario para generar su memorandum con la plantilla institucional")
 
-# Mapeo de áreas a artículos (siempre incluye el 30)
+# Mapeo de áreas a artículos
 ARTICULOS_POR_AREA = {
-    "Académica / Médico Cirujano / Enfermería": ["30", "19-XI", "19-XII", "20-VI", "21-VI"],
-    "Planeación y Evaluación": ["30", "22-I", "22-XIII"],
-    "Vinculación y Extensión": ["30", "26-III", "26-IV", "26-V", "27-VI"],
-    "Administrativa (no Recursos Materiales)": ["30", "29-I", "29-X"],
-    "Capital Humano": ["30", "31-XIII"],
-    "Abogado General": ["30", "16-III", "16-XIX"]
+    "RECTORÍA": ["15-V", "15-IX", "15-XXII"],
+    "ABOGADO GENERAL": ["16-I", "16-III", "16-XIX", "16-XXII"],
+    "SECRETARÍA ACADÉMICA": ["19-XI", "19-XII"],
+    "DIRECCIÓN DE LICENCIATURA EN MÉDICO CIRUJANO": ["20-II", "20-VI", "20-XVII"],
+    "DIRECCIÓN DE LICENCIATURA EN ENFERMERÍA Y OBSTETRICIA": ["21-II", "21-VI", "21-XVII"],
+    "SECRETARÍA DE PLANEACIÓN, EVALUACIÓN Y TECNOLOGÍAS DE LA INFORMACIÓN": ["22-I", "22-IV", "22-XIII"],
+    "DIRECCIÓN DE SERVICIOS ESCOLARES Y TITULACIÓN": ["23-VIII", "23-IX"],
+    "DIRECCIÓN DE EVALUACIÓN Y DESARROLLO INSTITUCIONAL": ["24-IV", "24-VI"],
+    "DIRECCIÓN DE INFORMÁTICA": ["25-VII", "25-XI"],
+    "SECRETARÍA DE VINCULACIÓN Y EXTENSIÓN UNIVERSITARIA": ["26-III", "26-IV", "26-V"],
+    "DIRECCIÓN DE INTERCAMBIOS Y ESTADÍAS PROFESIONALES": ["27-VI", "27-IX"],
+    "DIRECCIÓN DE COMUNICACIÓN": ["28-II", "28-XIV"],
+    "SECRETARÍA ADMINISTRATIVA (excepto Dirección de Recursos Materiales)": ["29-X", "29-XX"],
+    "DIRECCIÓN DE CAPITAL HUMANO": ["31-XIII"],
+    "DIRECCIÓN DE FINANZAS": ["32-II", "32-XI"]
 }
 
 # Funciones auxiliares
@@ -201,8 +210,9 @@ with st.form("solicitud_form"):
     with col1:
         solicitante_nombre = st.text_input("Nombre completo del solicitante *")
         solicitante_puesto = st.text_input("Puesto del solicitante *")
-        #departamento = st.text_input("Departamento de adscripción *")
         area_seleccionada = st.selectbox("Área *", list(ARTICULOS_POR_AREA.keys()))
+        jefe_nombre = st.text_input("Nombre del jefe *")
+        jefe_puesto = st.text_input("Puesto y Área del jefe *")
         
     with col2:
         asunto = st.text_input("Asunto *", value="Solicitud de vehículo institucional")
@@ -257,7 +267,7 @@ with st.form("solicitud_form"):
             st.error("❌ No se encuentra el archivo memo_reservas.tex")
         elif not verificar_latex():
             st.error("❌ LaTeX no está instalado correctamente")
-        elif not all([solicitante_nombre, solicitante_puesto, numero_memorandum]): 
+        elif not all([solicitante_nombre, solicitante_puesto, numero_memorandum, jefe_nombre, jefe_puesto]): 
             st.error("❌ Complete todos los campos obligatorios (marcados con *)")
         elif fecha_regreso < fecha_uso:
             st.error("❌ La fecha de regreso no puede ser menor a la fecha de salida")
@@ -278,9 +288,9 @@ with st.form("solicitud_form"):
                 
                 # Texto de personal
                 if numero_personas == 1:
-                    texto_personal = f"El personal que realizará el viaje estará a cargo del C. {solicitante_nombre}, {solicitante_puesto} del Departamento de {area_seleccionada}."
+                    texto_personal = f"El personal que realizará el viaje estará a cargo del C. {solicitante_nombre}."
                 else:
-                    texto_personal = f"El personal que realizará el viaje estará a cargo del C. {solicitante_nombre}, {solicitante_puesto} del Departamento de {area_seleccionada}, junto con {numero_personas - 1} personas adicionales."
+                    texto_personal = f"El personal que realizará el viaje estará a cargo del C. {solicitante_nombre}, junto con {numero_personas - 1} personas adicionales."
                 
                 # Texto de fechas
                 if fecha_uso == fecha_regreso:
@@ -307,8 +317,11 @@ with st.form("solicitud_form"):
                     'texto_personal': texto_personal,
                     'solicitante_nombre': solicitante_nombre.title(),
                     'solicitante_puesto': solicitante_puesto.title(),
-                    'area_seleccionada': area_seleccionada.title(),
+                    'area_seleccionada': area_seleccionada,
+                    'nombre_jefe': jefe_nombre.title(),
+                    'cargo_jefe': jefe_puesto.title(),
                     'elaboro': obtener_iniciales(solicitante_nombre),
+                    'reviso': obtener_iniciales(jefe_nombre),
                     'fecha_uso': fecha_uso.strftime("%d/%m/%Y"),
                     'fecha_regreso': fecha_regreso.strftime("%d/%m/%Y"),
                     'numero_personas': numero_personas,
@@ -351,7 +364,10 @@ with st.form("solicitud_form"):
                                 st.write(f"**Folio:** {folio}")
                                 st.write(f"**Número de Memorandum:** {numero_memorandum}")
                                 st.write(f"**Solicitante:** {solicitante_nombre}")
-                                st.write(f"**Área:** {area_seleccionada}")
+                                st.write(f"**Puesto del solicitante:** {solicitante_puesto}")
+                                st.write(f"**Jefe:** {jefe_nombre}")
+                                st.write(f"**Puesto del jefe:** {jefe_puesto}")
+                                st.write(f"**Área solicitante:** {area_seleccionada}")
                                 st.write(f"**Artículos:** {articulos_texto}")
                                 st.write(f"**Período:** {texto_fechas}")
                                 st.write(f"**Horario:** {hora_inicio.strftime('%H:%M')} - {hora_fin.strftime('%H:%M')}")
