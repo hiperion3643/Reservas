@@ -288,9 +288,9 @@ with st.form("solicitud_form"):
                 
                 # Texto de personal
                 if numero_personas == 1:
-                    texto_personal = f"El personal que realizará el viaje estará a cargo del C. {solicitante_nombre}."
+                    texto_personal = f"El personal que realizará el viaje estará a cargo del C. {solicitante_nombre.title()}."
                 else:
-                    texto_personal = f"El personal que realizará el viaje estará a cargo del C. {solicitante_nombre}, junto con {numero_personas - 1} personas adicionales."
+                    texto_personal = f"El personal que realizará el viaje estará a cargo del C. {solicitante_nombre.title()}, junto con {numero_personas - 1} personas adicionales."
                 
                 # Texto de fechas
                 if fecha_uso == fecha_regreso:
@@ -309,7 +309,7 @@ with st.form("solicitud_form"):
                     'folio': folio,
                     'asunto': asunto,
                     'fecha_actual': fecha_actual,
-                    'numero_memorandum': numero_memorandum,
+                    'numero_memorandum': numero_memorandum.upper(),
                     'articulos': articulos_texto,
                     'texto_fechas': texto_fechas,
                     'hora_inicio': hora_inicio.strftime("%H:%M"),
@@ -320,7 +320,7 @@ with st.form("solicitud_form"):
                     'area_seleccionada': area_seleccionada,
                     'nombre_jefe': jefe_nombre.title(),
                     'cargo_jefe': jefe_puesto.title(),
-                    'elaboro': obtener_iniciales(solicitante_nombre),
+                    'elaboro': obtener_iniciales(solicitante_nombre).lower(),
                     'reviso': obtener_iniciales(jefe_nombre),
                     'fecha_uso': fecha_uso.strftime("%d/%m/%Y"),
                     'fecha_regreso': fecha_regreso.strftime("%d/%m/%Y"),
