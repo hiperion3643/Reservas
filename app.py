@@ -8,6 +8,7 @@ import shutil
 from urllib.parse import quote
 from jinja2 import Environment
 import pandas as pd
+from streamlit_gsheets import GSheetsConnection
 
 # Configuración de página
 st.set_page_config(
@@ -15,11 +16,14 @@ st.set_page_config(
     page_icon="📄",
     layout="wide"
 )
+# Inicializar conexión a Google Sheets
+conn = st.connection("gsheets", type=GSheetsConnection)
+
 
 st.title("📄 Generador de Memorandums para Solicitud de Vehículos")
 st.markdown("Complete el formulario para generar su memorandum con la plantilla institucional")
 
-# Mapeo de áreas a artículos
+# Mapeo de áreas a artículos 
 ARTICULOS_POR_AREA = {
     "RECTORÍA": ["15-V", "15-IX", "15-XXII"],
     "ABOGADO GENERAL": ["16-I", "16-III", "16-XIX", "16-XXII"],
@@ -342,6 +346,54 @@ with st.form("solicitud_form"):
                             st.session_state.pdf_bytes = pdf_bytes
                             st.session_state.pdf_filename = f"Memorandum_{folio}.pdf"
                             st.session_state.show_download = True
+                            # === REGISTRO AUTOMÁTICO EN GOOGLE SHEETS ===
+                            with st.spinner("Guardando en Google Sheets..."):
+                                try:
+                                    # Intentar leer datos previos para no sobreescribir la hoja completa
+                                    try:
+                                        df_existente = conn.read(ttl=0)
+                                    except Exception:
+                                        # Estructura inicial por si la hoja está vacía
+                                        df_existente = pd.DataFrame(columns=[
+                                            "Folio", "Memo Num", "Solicitante", "Puesto Solicitante", 
+                                            "Área", "Jefe", "Puesto Jefe", "Fecha Salida", "Fecha Regreso", 
+                                            "Hora Salida", "Hora Regreso", "Total Personas", "Lugar Destino", 
+                                            "Ubicación Destino", "Motivo Destino", "Motivo General", "Fecha Registro"
+                                        ])
+                                    
+                                    # Generar registros independientes por cada destino asociado al mismo folio
+                                    nuevas_filas = []
+                                    for dest in destinos_filtrados:
+                                        nuevas_filas.append({
+                                            "Folio": folio,
+                                            "Memo Num": numero_memorandum.upper(),
+                                            "Solicitante": solicitante_nombre.title(),
+                                            "Puesto Solicitante": solicitante_puesto.title(),
+                                            "Área": area_seleccionada,
+                                            "Jefe": jefe_nombre.title(),
+                                            "Puesto Jefe": jefe_puesto.title(),
+                                            "Fecha Salida": fecha_uso.strftime("%Y-%m-%d"),
+                                            "Fecha Regreso": fecha_regreso.strftime("%Y-%m-%d"),
+                                            "Hora Salida": hora_inicio.strftime("%H:%M"),
+                                            "Hora Regreso": hora_fin.strftime("%H:%M"),
+                                            "Total Personas": numero_personas,
+                                            "Lugar Destino": dest['nombre'].title(),
+                                            "Ubicación Destino": dest['ubicacion'].title(),
+                                            "Motivo Destino": dest['motivo'],
+                                            "Motivo General": motivo_general,
+                                            "Fecha Registro": datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+                                        })
+                                    
+                                    df_nuevos_datos = pd.DataFrame(nuevas_filas)
+                                    df_actualizado = pd.concat([df_existente, df_nuevos_datos], ignore_index=True)
+                                    
+                                    # Actualizar Google Sheets
+                                    conn.update(data=df_actualizado)
+                                    st.toast("📊 ¡Datos sincronizados con Google Sheets!", icon="📈")
+                                    
+                                except Exception as err:
+                                    st.error(f"⚠️ El PDF se generó, pero falló la base de datos de Google Sheets: {str(err)}")
+
                             
                             # Preparar mensaje para WhatsApp
                             destinos_texto = []
