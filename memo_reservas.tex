@@ -9,28 +9,27 @@
 \usepackage{times}
 \usepackage{tikz}
 
-
 % Configuración de página
 \geometry{
-    paper=letterpaper,
-    margin=1.5cm,
-    top=3.8cm,
-    bottom=2.5cm,
-    left=2.5cm,
-    right=2.5cm
+  paper=letterpaper,
+  margin=1.5cm,
+  top=3.8cm,
+  bottom=2.5cm,
+  left=2.5cm,
+  right=2.5cm
 }
 
 % Agregar la plantilla PDF como fondo
 \AddToShipoutPictureBG{%
-    \put(0,0){%
-        \includegraphics[width=\paperwidth,height=\paperheight]{Hoja_Membretada.pdf}%
-    }%
+  \put(0,0){%
+    \includegraphics[width=\paperwidth,height=\paperheight]{Hoja_Membretada.pdf}%
+  }%
 }
 
 % Configurar fecha en español
 \addto\captionsspanish{%
-    \def\tablename{Tabla}%
-    \def\figurename{Figura}%
+  \def\tablename{Tabla}%
+  \def\figurename{Figura}%
 }
 
 % Eliminar numeración de página
@@ -43,85 +42,56 @@
 \begin{document}
 
 % Fecha y folio al lado derecho
-\noindent
 \begin{flushright}
-{\small \textbf{Cuatro Veces Heroica Puebla de Zaragoza, a [[ fecha_actual ]]}} \\
-{\small \textbf{Memorándum: [[ numero_memorandum ]]}} \\
-{\small \textbf{Asunto:} [[ asunto ]]}
+  {\small \textbf{Cuatro Veces Heroica Puebla de Zaragoza, a [[ fecha_actual ]]}} \\
+  {\small \textbf{Memorándum: [[ numero_memorandum ]]}} \\
+  {\small \textbf{Asunto:} [[ asunto ]]}
 \end{flushright}
 
 \vspace{0.3cm}
 
 % Destinatario
-\noindent
-\textbf{C. Altagracia  García Rosas} \\
+\textbf{C. Altagracia García Rosas} \\
 \textbf{Secretaria Administrativa} \\
 
-\vspace{0.3cm}    
-
-\noindent
+\vspace{0.3cm}
 \textbf{PRESENTE}
-
 \vspace{0.3cm}
 
 % Cuerpo del documento
-\noindent
 Con el gusto de saludarle y con fundamento en los artículos [[ articulos ]] y 30 del Reglamento Interior de la Universidad de la Salud, me dirijo a usted para solicitar el préstamo de la unidad automovilística institucional [[ texto_fechas ]] en un horario de [[ hora_inicio ]] a [[ hora_fin ]] horas; El vehículo será utilizado para visitar los siguientes lugares:
 
-
 \vspace{0.2cm}
-
 {\small
 \begin{tabular}{|p{3.5cm}|p{7cm}|p{4cm}|}
 \hline
-\textbf{Lugar} & \textbf{Ubicación} & \textbf{Motivo} \\
-\hline
+\textbf{Lugar} & \textbf{Ubicación} & \textbf{Motivo} \\ \hline
 <BLOCK> for destino in destinos_lista </BLOCK>
-[[ destino.nombre ]] & [[ destino.ubicacion ]] & [[ destino.motivo ]] \\
-\hline
+[[ destino.nombre ]] & [[ destino.ubicacion ]] & [[ destino.motivo ]] \\ \hline
 <BLOCK> endfor </BLOCK>
 \end{tabular}
 }
-
 \vspace{0.2cm}
 
-\noindent
 [[ texto_personal ]] \\
-
-\noindent
 Sin otro particular quedo de usted, agradeciendo su atención y apoyo.
 
-\vspace{0.3cm}
-
-\noindent
-
-\vspace{0.4cm}
+\vspace{0.7cm}
 
 % Firmas - Tres columnas
-\noindent
-\begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}ccc}
-     & \textbf{ATENTAMENTE} & \\ [4ex]
-     & \rule{5cm}{0.4pt} &  \\
-     & \textbf{C. [[ nombre_jefe ]]} &  \\
-     & [[ cargo_jefe ]] &  \\ \\
-     & &  \\
+\noindent\begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}ccc}
+& \textbf{ATENTAMENTE} & \\ [6ex]
+& \rule{5cm}{0.4pt} & \\
+& \textbf{C. [[ nombre_jefe ]]} & \\
+& [[ cargo_jefe ]] & \\
 \end{tabular*}
 
-\vspace{0.4cm}
+\vspace{0.8cm}
+
 \small \textbf{C.C.P:} . - C. Rafael Pérez Raviela. Encargado de Despacho de la Dirección de Recursos Materiales.\\
 \small Universidad de la Salud del Estado de Puebla. - Para su conocimiento. - Presente.\\
 \small \textbf{C.c:} Archivo.\\
-
-\noindent
 \textbf{Elaboró:} [[ elaboro ]] \\
-\textbf{Revisó:} [[ reviso ]]\\
-
-\vspace{0.3cm} % Espacio vertical entre las firmas de arriba y la de abajo
-
-% Pie de página
-\noindent
-
-% Restaurar geometría original
-\restoregeometry
+\textbf{Revisó:} [[ reviso ]]
 
 \end{document}
