@@ -25,7 +25,7 @@ st.markdown("Complete el formulario para generar su memorandum con la plantilla 
 
 # Mapeo de áreas a artículos 
 ARTICULOS_POR_AREA = {
-    "RECTORÍA": ["15-V", "15-IX", "15-XXII"],
+    "RECTORÍA": ["12-I", "12-XXII", "15-XX"],
     "ABOGADO GENERAL": ["16-I", "16-III", "16-XIX", "16-XXII"],
     "SECRETARÍA ACADÉMICA": ["19-XI", "19-XII"],
     "DIRECCIÓN DE LICENCIATURA EN MÉDICO CIRUJANO": ["20-II", "20-VI", "20-XVII"],
@@ -37,7 +37,7 @@ ARTICULOS_POR_AREA = {
     "SECRETARÍA DE VINCULACIÓN Y EXTENSIÓN UNIVERSITARIA": ["26-III", "26-IV", "26-V"],
     "DIRECCIÓN DE INTERCAMBIOS Y ESTADÍAS PROFESIONALES": ["27-VI", "27-IX"],
     "DIRECCIÓN DE COMUNICACIÓN": ["28-II", "28-XIV"],
-    "SECRETARÍA ADMINISTRATIVA (excepto Dirección de Recursos Materiales)": ["29-X", "29-XX"],
+    "DIRECCIÓN DE RECURSOS MATERIALES": ["30-VII"],
     "DIRECCIÓN DE CAPITAL HUMANO": ["31-XIII"],
     "DIRECCIÓN DE FINANZAS": ["32-II", "32-XI"]
 }
@@ -277,7 +277,7 @@ with st.form("solicitud_form"):
             st.error("❌ La fecha de regreso no puede ser menor a la fecha de salida")
         else:
             # Obtener artículos según el área seleccionada
-            articulos_asignados = ARTICULOS_POR_AREA.get(area_seleccionada, ["30"])
+            articulos_asignados = ARTICULOS_POR_AREA.get(area_seleccionada, ["29-I"])
             articulos_texto = ", ".join(articulos_asignados)
             
             # Preparar destinos - Crear DataFrame
