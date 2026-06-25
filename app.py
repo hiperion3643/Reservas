@@ -329,7 +329,15 @@ with st.form("solicitud_form"):
                     'fecha_uso': fecha_uso.strftime("%d/%m/%Y"),
                     'fecha_regreso': fecha_regreso.strftime("%d/%m/%Y"),
                     'numero_personas': numero_personas,
-                    'destinos_lista': destinos_filtrados
+                    'destinos_lista': [
+                        {
+                            'nombre': d['nombre'].strip().capitalize(),
+                            'ubicacion': d['ubicacion'].strip().capitalize(),
+                            'motivo': d['motivo'].strip().capitalize()
+                        }
+                        for d in destinos_filtrados
+                    ],
+
                 }
                 
                 # Generar y compilar
